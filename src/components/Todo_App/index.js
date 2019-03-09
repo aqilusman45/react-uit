@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { CreateTask } from '../Create_Task';
-import TaskList from '../Task_List';
+import {TaskList} from '../Task_List';
  
 
 const INTITIAL_STATE = {
@@ -35,7 +35,7 @@ class TodoApp extends Component {
         this.setState({
             task: '',
             description: '',
-        });
+        }, ()=> alert("Task Added"));
         event.preventDefault();        
     }
 
@@ -55,7 +55,7 @@ class TodoApp extends Component {
         tasks.splice(itemIndex, 1);
         this.setState({
              tasks 
-        });
+        }, ()=> alert("Task Deleted"));
     }
 
     onEditHandler = (event) =>{
@@ -70,16 +70,19 @@ class TodoApp extends Component {
         })
     }
 
+//SetState Behaves Async and can receive a callback as argument in which 
+//We can pass on complete alert.
+
     onUpdateHandler = (event) =>{
         console.log(event);
-        let {tasks , task , description} = this.state;
-        tasks.splice(this.state.arrLoc, 1, {task ,description});
+        let {tasks , task , description, arrLoc} = this.state;
+        tasks.splice(arrLoc, 1, {task ,description});
         this.setState({
             tasks,
-        })
+        });
         this.setState({
-            ...INTITIAL_STATE
-        })
+            ...INTITIAL_STATE,
+        }, ()=> alert("Task Updated"));
     }
 
 
