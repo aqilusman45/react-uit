@@ -1,19 +1,19 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import {TaskView} from '../Task_View';
 import {TaskHandlers} from '../Task_Handlers';
 
 
-const INITIAL_STATE = {
-    tasks: [],
-}
-export default class TaskList extends Component{
-    constructor(props){
-        super(props)
-        this.state = {...INITIAL_STATE};
-        // this.handleDelete = this.handleDelete.bind(this);
-        // this.handleEdit = this.handleEdit.bind(this);
-    }
+// const INITIAL_STATE = {
+//     tasks: [],
+// }
+// export default class TaskList extends Component{
+    // constructor(props){
+    //     super(props)
+    //     this.state = {...INITIAL_STATE};
+    //     // this.handleDelete = this.handleDelete.bind(this);
+    //     // this.handleEdit = this.handleEdit.bind(this);
+    // }
 
     // componentWillReceiveProps(){
     //     this.getTasksArray();
@@ -36,15 +36,15 @@ export default class TaskList extends Component{
     //     this.props.onChange(i, item , op);
     // }
 
-    render(){
+export const TaskList = (props) =>{
         return(
             <div>
                 <h1>ToDo</h1>
                     {
-                        this.props.tasks.map((item,i)=>{
+                        props.tasks.map((item,i)=>{
                             return (
                                 <div key={i}>
-                                    <TaskHandlers delete={()=> this.props.delete(i)} keys={i} edit={()=> this.props.edit(i)} />
+                                    <TaskHandlers delete={()=> props.delete(i)} keys={i} edit={()=> props.edit(i)} />
                                     <TaskView item={item} keys={i}/>
                                 </div>
                             )
@@ -53,4 +53,3 @@ export default class TaskList extends Component{
             </div>
         )
     }
-}
