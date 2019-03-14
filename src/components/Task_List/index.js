@@ -39,13 +39,12 @@ import {TaskHandlers} from '../Task_Handlers';
 export const TaskList = (props) =>{
         return(
             <div>
-                <h1>ToDo</h1>
                     {
                         props.tasks.map((item,i)=>{
                             return (
-                                <div key={i}>
-                                    <TaskHandlers delete={()=> props.delete(i)} keys={i} edit={()=> props.edit(i)} />
-                                    <TaskView item={item} keys={i}/>
+                                <div key={i} style={{border: "2px solid black", display: "inline-block", padding: "20px" , margin: "20px" }}>
+                                    <TaskHandlers isUpdate={props.editbool} delete={()=> props.delete(i)} keys={i} edit={()=> props.edit(i)} />
+                                    <TaskView item={item} keys={i} details={()=>{props.details(i)}}/>
                                 </div>
                             )
                         })

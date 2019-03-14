@@ -8,6 +8,9 @@ export const TaskView = (props) => {
         <div>
             <p><b>Task#{props.keys + 1}</b> :{props.item.task}</p>
             <p><b>Description</b> :{props.item.description}</p>
+            <button onClick={props.details}>
+                View Details
+            </button>
         </div>
     )
 }
