@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import {TodoApp} from '../Todo_App';
+import { BrowserRouter as Router, Route,} from 'react-router-dom';
 
+//Routes
+import * as ROUTES from '../../constants/routes';
+
+//Components
+import { TodoApp } from '../Todo_App';
+import { Navigation } from '../Navigation';
+import { Home } from '../Home';
+import { About } from '../About';
+import { TaskPage } from '../Task_Page';
+import { Users } from '../Users';
 
 class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <div className="Todo_App">
-        <TodoApp/>
-        </div>
-        </header>
-      </div>
+      <Router>
+        <div className="Wrapper">
+          <Navigation />
+          <Route path={ROUTES.HOME} exact component={Home} />
+          <Route path={ROUTES.TODO} component={TodoApp} />
+          <Route path={ROUTES.ABOUT} component={About} />
+          <Route path={ROUTES.USERS} component={Users}/>
+          <Route path={ROUTES.TASKPAGE} component={TaskPage}/>
+         </div>
+      </Router>
     );
   }
 }

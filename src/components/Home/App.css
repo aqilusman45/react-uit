@@ -1,0 +1,76 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 1s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.App .App-header .Contact-List {
+  text-align: left
+}
+
+
+.App .App-header .Contact-List ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.App .App-header .Contact-List h1{
+  margin: 0;
+}
+
+.App .App-header .Contact-List {
+  width: 25%;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.App .App-header .Contact-List div img{
+  /* border: 2px solid white; */
+  border-radius: 100%;
+}
+
+.App .App-header .Contact-List div span{
+    font-size: 18px;
+}
+
+
+/* .App .App-header .Contact-List  .Contact-Container .Contact-Details{
+    display: flex;
+    vertical-align: middle;
+    padding: 20px;
+} */
+
+/* .App .App-header .Contact-List  .Contact-Container .Contact-Details span{
+  margin: 0 10px;
+} */

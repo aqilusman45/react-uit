@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import { CreateTask } from '../Create_Task';
 import {TaskList} from '../Task_List';
- 
+
+import * as ROUTES from '../../constants/routes';
 
 const INTITIAL_STATE = {
     tasks: [],
@@ -17,7 +18,6 @@ class TodoApp extends Component {
         super(props)
         this.state = {...INTITIAL_STATE};
 
-
         // this.handleTaskChange = this.handleTaskChange.bind(this);
 
 
@@ -25,6 +25,14 @@ class TodoApp extends Component {
         //in contrast "this" works fine with fat arrow functions. 
         // this.onDeleteHandler = this.onDeleteHandler.bind(this);
     }
+
+    // componentWillMount(){
+    //     console.log("Component Will Mount");
+    // };
+
+    // componentDidMount(){
+    //     console.log("Component Did Mount");
+    // };
 
     addTask = event => {
         const { tasks , task , description } = this.state;
@@ -85,6 +93,9 @@ class TodoApp extends Component {
         }, ()=> alert("Task Updated"));
     }
 
+    viewDetailsHandler = (event)=>{
+        this.props.history.push(ROUTES.TASKPAGE, {...this.state.tasks[event]});
+    }
 
     // handleOperation = (i, item , op) => {
     //     if (op === "edit") {
@@ -108,10 +119,13 @@ class TodoApp extends Component {
 
     render() {
         return (
-            <div>
-                <CreateTask onUpdate={this.onUpdateHandler} isUpdate={this.state.isUpdate} task={this.state.task} description={this.state.description} onChange={this.onChange} add={this.addTask} />
-                <TaskList tasks={this.state.tasks} edit={this.onEditHandler} delete={this.onDeleteHandler} />
+        <div className="App">
+            <div className="App-header">
+            <h1>TODO</h1>
+                <CreateTask onUpdate={this.onUpdateHandler} isUpdate={this.state.isUpdate} task={this.state.task} description={this.state.description} onChange={this.onChange} add={this.addTask}  />
+                <TaskList tasks={this.state.tasks} edit={this.onEditHandler} delete={this.onDeleteHandler} editbool={this.state.isUpdate} details={this.viewDetailsHandler} />
             </div>
+        </div>
         )
     }
 }
