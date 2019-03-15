@@ -2,6 +2,9 @@ import React from 'react';
 
 import { ContactList } from '../Contact_List';
 
+// import * as ROUTES from '../../constants/routes';
+
+import { withRouter } from 'react-router-dom';
 
 const INITIAL_STATE = {
     users: [],
@@ -10,7 +13,7 @@ const INITIAL_STATE = {
 
 
 
-export class Users extends React.Component {
+class Users1 extends React.Component {
     constructor(props) {
         super(props)
         this.state = { ...INITIAL_STATE };
@@ -52,7 +55,7 @@ export class Users extends React.Component {
     // })
     // }
 
-    componentWillMount() {
+    componentWillMount() {        
         // var {users} = this.state;
         fetch("https://randomuser.me/api/?results=20")
             .then((resolve) => {
@@ -112,6 +115,9 @@ export class Users extends React.Component {
     //      })
     // }
 
+    getUserPage = (item)=> {
+        this.props.history.push(`/users/${item.name.first}`, item)   
+    }
 
     // componentWillUnmount(){
     //     console.log("Component Will Unmount");
@@ -125,14 +131,13 @@ export class Users extends React.Component {
 
     render() {
         // console.log("Render HTML");
-        console.log(this.state);
         return (
             <div className="App">
                 <div className="App-header">
-                <h1>Contact List</h1>
+                <h1>User List</h1>
         <div className="Contact-List">
 
-                    <ContactList isLoading={this.state.isLoading} item={this.state.users} />
+                    <ContactList profile={this.getUserPage} isLoading={this.state.isLoading} item={this.state.users} />
 
                     {/* {
                 <ul>
@@ -159,3 +164,6 @@ export class Users extends React.Component {
     }
 }
 
+const Users = withRouter(Users1);
+
+export {Users};

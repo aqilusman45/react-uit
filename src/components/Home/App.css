@@ -34,7 +34,9 @@
 
 
 .App .App-header .Contact-List {
-  text-align: left
+  text-align: left;
+  text-transform: capitalize;
+  margin: 5px;
 }
 
 
