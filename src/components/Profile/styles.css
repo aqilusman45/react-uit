@@ -1,0 +1,28 @@
+.App .App-header  .Profile-Page .Profile-Picture img{
+    border: 2px solid white;
+    border-radius: 100%
+}
+
+
+.App .App-header  .Profile-Page .Profile-Details h1{
+    margin: 5px;
+    text-transform: capitalize;
+}
+
+.App .App-header  .Profile-Page .Profile-Details .Email-Tel div {
+    margin: 10px;
+}
+
+.App .App-header  .Profile-Page .Profile-Details .Email-Tel div a{
+    color: white;
+}
+
+
+.App .App-header  .Profile-Page .Profile-Details .More-Detail p{
+     font-size: 20px;
+}
+
+.App .App-header  .Profile-Page .Profile-Details .More-Detail{
+    text-align: left;
+    text-transform: capitalize;
+}

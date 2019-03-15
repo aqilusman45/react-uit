@@ -93,7 +93,7 @@ class TodoApp extends Component {
         }, ()=> alert("Task Updated"));
     }
 
-    viewDetailsHandler = (event)=>{
+    viewDetailsHandler = (event) =>{
         this.props.history.push(ROUTES.TASKPAGE, {...this.state.tasks[event]});
     }
 

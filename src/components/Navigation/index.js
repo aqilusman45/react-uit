@@ -6,7 +6,6 @@ import './styles.css';
 
 
 const Navigation1 = (props) => {
-    console.log(props)
     return (<header className="header">
         <a href={props.location.pathname} className="logo">{props.location.pathname}</a>
         <input className="menu-btn" type="checkbox" id="menu-btn" />

@@ -10,31 +10,31 @@ import React from 'react';
 //             description: this.props.location.state.description,
 //         })
 //     }
+// // }
+
+// const INITIAL_STATE = {
+//     task: '',
+//     description: '',
 // }
 
-const INITIAL_STATE = {
-    task: '',
-    description: '',
-}
+export const TaskPage = (props) => {
+// constructor(props){
+//     super(props)
+//     this.state = {...INITIAL_STATE}
+// }
 
-export class TaskPage extends React.Component {
-constructor(props){
-    super(props)
-    this.state = {...INITIAL_STATE}
-}
+    // componentWillMount() {
+    //     console.log(this.props);
 
-    componentWillMount() {
-        console.log(this.props);
-
-        if (this.props.location.state === undefined) {
-            this.props.history.push('/todo');
-        } else {
-            this.setState({
-                task: this.props.location.state.task,
-                description: this.props.location.state.description,
-            })
-        }
-    }
+    //     if (this.props.location.state === undefined) {
+    //         this.props.history.push('/todo');
+    //     } else {
+    //         this.setState({
+    //             task: this.props.location.state.task,
+    //             description: this.props.location.state.description,
+    //         })
+    //     }
+    // }
 
     // componentWillUnmount(){
     //     this.setState({
@@ -43,15 +43,22 @@ constructor(props){
     //     })
     // }
 
-    render() {
+    // render() {
+
+    
+        if (props.location.state === undefined) {
+            props.history.push('/todo');
+            return null
+        } else {
+            const taskInfo = props.location.state;  
         return (
             <div className="App">
             <div className="App-header">
                 <h2>
-                    Task : {this.state.task}
+                    Task : {taskInfo.task}
                 </h2>
                 <h2>
-                    Description: {this.state.description}
+                    Description: {taskInfo.description}
                 </h2>
                 </div>
             </div>
