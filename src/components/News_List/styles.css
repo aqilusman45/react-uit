@@ -1,0 +1,48 @@
+.Wrapper .news .newslist-container .newsList-wrapper {
+  width: 89%;
+  padding: 30px;
+  margin: auto;
+}
+
+.Wrapper .news .newslist-container {
+  width: 100%;
+  background: #282c34;
+}
+
+.Wrapper .news .newslist-container h1{
+    margin:0;
+    color: white;
+    text-align: center;
+}
+
+
+/* .Wrapper .news .newslist-container .newsList-wrapper .newsList-item .newsList-item {
+
+    height: 100px;
+    width: 33.33%;
+} */
+/* 
+.slick-slide.slick-active.slick-current{
+    margin: 0 10px;
+} */
+
+.slick-slide {
+  width: 80%;
+}
+
+.list-item {
+  background: aquamarine;
+  width: 90% !important;
+  height: 186px;
+  padding: 14px;
+  display: inline-block;
+}
+
+.list-item h3{
+    margin: 5px;
+}
+
+
+.list-item p{
+    margin: 10px;
+}

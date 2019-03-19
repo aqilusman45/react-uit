@@ -17,7 +17,13 @@ import React from 'react';
 //     description: '',
 // }
 
-export const TaskPage = (props) => {
+
+
+//Object Destrcturing of Props Recieved
+// from React Router passed as Arguments
+
+
+export const TaskPage = ({history, location}) => {
 // constructor(props){
 //     super(props)
 //     this.state = {...INITIAL_STATE}
@@ -46,11 +52,11 @@ export const TaskPage = (props) => {
     // render() {
 
     
-        if (props.location.state === undefined) {
-            props.history.push('/todo');
+        if (location.state === undefined) {
+            history.push('/todo');
             return null
         } else {
-            const taskInfo = props.location.state;  
+            const taskInfo = location.state;  
         return (
             <div className="App">
             <div className="App-header">
