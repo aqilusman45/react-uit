@@ -12,7 +12,8 @@ import { About } from '../About';
 import { TaskPage } from '../Task_Page';
 import { Users } from '../Users';
 import { Profile } from "../Profile";
-
+import {News} from '../News';
+ 
 class App extends Component {
 
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
           <Route path={ROUTES.ABOUT} exact component={About} />
           <Route path={ROUTES.USERS} exact component={Users}/>
           <Route path={ROUTES.TASKPAGE} exact component={TaskPage}/>
+          <Route path={ROUTES.NEWS} component={News}/>
           <Route path={ROUTES.PROFILE} component={Profile}/>
          </div>
       </Router>

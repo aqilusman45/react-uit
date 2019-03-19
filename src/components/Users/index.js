@@ -131,6 +131,8 @@ class Users1 extends React.Component {
 
     render() {
         // console.log("Render HTML");
+        console.log(this.state);
+        
         return (
             <div className="App">
                 <div className="App-header">

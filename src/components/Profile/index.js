@@ -2,14 +2,14 @@ import React from 'react';
 
 import './styles.css'
 
-
-export const Profile = (props) => {
-
-    if (props.location.state === undefined) {
-        props.history.push('/users');
+//Object Destrcturing of Props Recieved
+// from React Router passed as Arguments
+export const Profile = ({location, history}) => {
+    if (location.state === undefined) {
+        history.push('/users');
         return null
     } else {
-        const userInfo = props.location.state;        
+        const userInfo = location.state;        
         return (
             <div className="App">
                 <div className="App-header">
